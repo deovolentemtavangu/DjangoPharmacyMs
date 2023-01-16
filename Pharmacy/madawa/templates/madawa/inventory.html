@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<a href="{% url 'create-inventory' %}">Add Inventory</a>
+<H1>Inventory Available</H1>
+<table>
+<tr>
+    <th>Inventory Name</th>
+    <th>Type</th>
+    <th>Action</th>
+</tr>
+{% for inventory in inventory_list %}
+<tr>
+    <td>{{inventory.inventory_name}}</td>
+    <td>{{inventory.inventory_type}}</td>  
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

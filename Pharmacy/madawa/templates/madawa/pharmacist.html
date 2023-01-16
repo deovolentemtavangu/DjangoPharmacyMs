@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block content %}<br>
+<a href="{% url 'create-pharmacist' %}" class="btn btn-success float-right">Add pharmacist</a>
+<H1>Pharmacist List</H1>
+<table class="table">
+    <thead class="thead-dark">
+<tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Admin Address</th>
+    <th>Admin Email</th>
+    <th>Password</th>
+    <th scope="col">Action</th>
+    <th></th>
+    <th></th>
+</tr>
+</thead>
+{% for pharmacist in pharmacist_list %}
+<tr>
+    <td>{{pharmacist.fname}}</td>
+    <td>{{pharmacist.lname}}</td>  
+    <th>{{pharmacist.gender}}</th>
+    <th>{{pharmacist.age}}</th>
+    <th>{{pharmacist.admin_add}}</th>
+    <th>{{pharmacist.admin_email}}</th>
+    <th>{{pharmacist.admin_pass}}</th>
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

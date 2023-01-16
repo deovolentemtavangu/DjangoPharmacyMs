@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}<br>
+<a href="{% url 'create-report' %}" class="btn btn-success float-right">Add report</a>
+<H1>reports Available({{report_count}})</H1>
+<table class="table">
+    <thead class="thead-dark">
+<tr>
+    <th>Purchase</th>
+    <th>Sales</th>
+    <th>Customer</th>
+    <th>Date</th>
+    <th scope="col">Action</th>
+    <th></th>
+    <th></th>
+</tr>
+</thead>
+{% for report in reports_list %}
+<tr>
+    <td>{{report.purchase_id}}</td>
+    <td>{{report.sales_id}}</td>  
+    <td>{{report.cust_id}}</td>
+    <td>{{report.date}}</td>
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

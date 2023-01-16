@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
+<a href="{% url 'create-project' %}">Add Medicine</a>
+<H1>Products Available</H1>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Strength</th>
+    <th>Description</th>
+    <th>Unit</th>
+    <th>Action</th>
+</tr>
+{% for medicine in medicine_list %}
+<tr>
+    <td>{{medicine.name}}</td>
+    <td>{{medicine.strength}}</td>
+    <td>{{medicine.description}}</td>
+    <td>{{medicine.unit}}</td>
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+   
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

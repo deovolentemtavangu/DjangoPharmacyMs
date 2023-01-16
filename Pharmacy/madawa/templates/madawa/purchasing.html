@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}<br>
+<a href="{% url 'create-purchasing' %}" class="btn btn-success float-right">Add purchasing</a>
+<H1>Purchases</H1>
+<table class="table">
+    <thead class="thead-dark">
+    <th>Purchase</th>
+    <th>Customer</th>
+    <th>Medication</th>
+    <th>Amount</th> 
+    <th>Date</th>
+    <th scope="col">Action</th>
+    <th></th>
+    <th></th>
+</tr>
+</thead>
+{% for purchasing in purchasing_list %}
+<tr>
+    <td>{{purchasing.purchase_id}}</td>
+    <td>{{purchasing.cust_id}}</td>
+    <td>{{purchasing.med_id}}</td>
+    <td>{{purchasing.amount}}</td>
+    <td>{{purchasing.date}}</td>
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

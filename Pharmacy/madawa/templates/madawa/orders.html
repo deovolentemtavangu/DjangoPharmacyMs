@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+<a href="{% url 'create-order' %}">new order</a>
+<H1>orders made</H1>
+<table>
+<tr>
+    <th>order Name</th>
+    <th>order type</th>
+    <th>customer name</th>
+    <th>Action</th>
+</tr>
+{% for order in order_list %}
+<tr>
+    <td>{{order.order_name}}</td>
+    <td>{{order.order_type}}</td>  
+    <td>{{order.customer_name}}</td> 
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

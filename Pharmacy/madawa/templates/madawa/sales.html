@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block content %}
+<br> 
+<a href="{% url 'create-sales' %}" class="btn btn-success float-right">Add sales</a>
+<H1>Sales</H1>
+<table class="table">
+    <thead class="thead-dark">
+<tr>
+    <th>Date</th>
+    <th>Customer</th>
+    <th>Medication</th>
+    <th>Count</th>
+    <th>Purchase</th>
+    <th>Total Amount</th>
+    <th scope="col">Action</th>
+    <th></th>
+    <th></th>
+</tr>
+</thead>
+{% for sales in sales_list %}
+<tr>
+    <td>{{sales.date}}</td>
+    <td>{{sales.cust_id}}</td>
+    <td>{{sales.med_id}}</td>
+    <td>{{sales.count}}</td>
+    <td>{{sales.purchase_id}}</td>
+    <td>{{sales.total_amount}}</td>
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

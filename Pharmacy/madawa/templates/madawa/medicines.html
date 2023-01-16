@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block content %}<br>
+<a href="{% url 'create-medicines' %}" class="btn btn-success float-right">Add medicines</a>
+<H1>Medicines Available({{medicine_count}})</H1>
+<table class="table">
+    <thead class="thead-dark">
+<tr>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th scope="col">Action</th>
+    <th></th>
+    <th></th>
+</tr>
+</thead>
+{% for medicines in medicines_list %}
+<tr>
+    <td>{{medicines.med_category}}</td>
+    <td>{{medicines.name}}</td>  
+    <td>{{medicines.Description}}</td>  
+    <td>{{medicines.price}}</td>  
+    <td><a href="">Create</a></td>
+    <td><a href="">Update</a></td>
+    <td><a href="">Read</a></td>
+</tr>
+{% endfor %}
+</table>
+{% for count in medicineno %}
+<p>{{medicineno.}}</p>
+{% endfor %}
+{% endblock content %}
